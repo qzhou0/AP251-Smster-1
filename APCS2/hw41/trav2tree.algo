@@ -1,0 +1,26 @@
+Qian Zhou
+APCS2 pd01
+HW41 -- A Tree Grows in 251  or BK
+2018-04-29
+
+prerequisite information: two different types of traversals that are either intraverse and pretraverse, or
+intraverse and posttraverse, for pre-traverse and post-traverse may allwo for construction of two different trees.
+
+with pretraverse and intraverse
+
+1. the first value of pretraverse region is the first value, locate the index of such a value in intraverse,
+all values to the left of it is on the left of the first value, all values right of it is to the right
+2. if intraverse shows there's a left, the next value of pretraverse shows the root of the left subtree, and its index
+the division between the left and right subsub of the left subtree; else it shows the right
+3. find the region where the values of each subtree are in pretraverse.
+4. repeat 1-4 for each region until there's no sub left subtrees to the left of a division point
+5. the values not yet appended between the division points represents the right subtrees, repeat 1-3 accordingly for these right subtrees 
+6. repeat 1-5 until entire string of values traversed
+
+with posttraverse and intraverse
+1. the last value of posttraverse region is the first value, locate in index of such value in intraverse, this represents the first value of a tree
+2. if intraverse shows there's a left, the next value of posttraverse shows the root of the left subtree, and the division between the left and right subsubtree
+3. find the region where values of each subsubtree are in posttraverse; else it shows the right
+4. repeat 1-4 for each region 
+5. the values not yet appended between the division points represents the right subtrees, restart from step 1 for each subdivision of right subtrees
+6. repeat 5-6 until entire string traversed.

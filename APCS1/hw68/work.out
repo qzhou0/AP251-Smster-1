@@ -1,0 +1,75 @@
+MuddyPotatoes -- Clarence Cheng, Qian Zhou, Tania Cao
+APCS1 pd01
+HW68 -- PPMP
+2018-01-12
+
+ 1)C
+ 2)B
+  0-1
+  1-1
+  2-
+ 3)D
+ 4)E
+ 
+ 5)C//E?
+ I'M not sure but method A and b are not defined it is an interface, it carries over I think? You can't have undefined methods for noninterface non abstract classes?
+ 
+ 6)B
+ 7)A
+ 8)A
+ 9)C
+ 10)D
+
+11)
+
+a.
+public int nextTankToFill(int threshold){
+       int n = -1;
+       for (int i = 0; i < tanks.size(); i ++){
+       	   if (tanks.get(i).getFuelLevel() < threshold
+	       && tanks.get(i).getFuelLevel() < tanks.get(n).getFuelLevel())
+	       	  {n = i;}}
+	if (n = -1){return filler.getCurrentIndex();}
+       return n;
+       }
+
+b.
+public void moveToLocation(int locIndex){
+       if ((locIndex < filler.getCurrentIndex() && filler.isFacingRight())||
+            locIndex > filler.getCurrentIndex() && (! filler.isFacingRight())){
+       filler.changeDirection();
+       }
+       int diff = Math.sqrt(Math.pow(locIndex - filler.getCurrentIndex(),2));
+       filler.moveFoward(diff);
+}
+
+
+12)
+
+a.
+private void fillBlock(String str){
+	
+	for (int i = 0; i < numRows; i++){
+	    for (int j = 0; j < numCols; j++){
+	    	int k = j * numRows + i;
+		if (k > str.length()){
+		   letterBlock[j,i] = "A";
+		   }
+		else {
+		   letterBlock[j,i] = str.substring(k, k+1);
+		   }
+		}
+		}
+}
+
+b.
+public String encryptMessage(String message){
+      String retStr = "";
+      for (int count = numRows * numCols-1; count < message.length(); count = count *2 +1){
+      	  String mssg = message.substring(count + 1 - numRows * numCols, count);
+      	  fillBlock(mssg);
+      	  retStr += encryptBlock();
+	  }
+	return retStr;
+
+}

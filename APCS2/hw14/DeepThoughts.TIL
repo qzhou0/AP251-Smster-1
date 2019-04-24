@@ -1,0 +1,21 @@
+Qian Zhou
+APCS2 pd01
+HW14 --
+2018-03-05
+
+Q1: From any starting position, can an open tour always be found? Explain.
+From some starting positions an open tour may not always be found as in the example in class of a 4x4 board starting in a corner. 
+
+Q2: Same, but for closed tour.
+If there is a closed tour, from any startin position it can be found since in a closed tour any position would be a point in a closed loop, therefore any point could be a starting point. 
+Q3: How do you explain the increase in execution time as n increases?
+As n increases, each recursive call may need to get deeper to probe to the end of that way, and would therefore need more recursive calls each checking on more.
+
+Q4: Thoughts on optimization?
+Maybe Fiona and Platt's ideas on the QAF post "Knights Tour" may be good ideas on optimization though needing of hard codings. I don't think I can come up with methods on optimization. Maybe it can alternate between directions that to test first in a certain distance to avoid running into the walls once in a while with another variable, but I don't see a lot of efficiency in that?
+
+1. if this is exit, then exit
+2. if you have neither been to this certain square, nor is it a wall, mark it with "special" symbol, else ignore 4-5
+4. repeat step 2-3 for squares (x+-1, y) and (x, y+-1)
+5. mark present square with "have been there" symbol
+

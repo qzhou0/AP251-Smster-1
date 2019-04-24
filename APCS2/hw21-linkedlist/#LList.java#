@@ -1,0 +1,67 @@
+/*
+Qian Zhou
+APCS2 pd01
+HW21c -- Rockin’ Through the Night
+2018-03-19
+*/
+public class LList implements List{
+    //------variables---------
+    private int size;
+    private LLNode node;
+    //----constructor ---------
+    LList(){
+	size = 0;
+	node = null;
+    }
+    //--------methods of List---------//
+    public boolean add(String x){
+	LLNode n = new LLNode();
+
+	n.setNext(node);
+	node = n;
+	node.setCargo(x);
+	size ++;
+	return true;
+	
+    }
+    public String get(int i){
+	LLNode m = node;
+	while (i!=0){
+	    m = m.getNext();
+	    i--;
+	}
+	return m.getCargo();
+	    
+    }
+    public String set(int i, String x){
+	LLNode m = node;
+	while(i!=0){
+	    m = m.getNext();
+	    i--;
+	}
+	return m.setCargo(x);
+    }
+    public int size(){
+	return size;
+    }
+    public String toString(){
+	String s ="";
+	s+=node;
+	return s;
+    }
+    public static void main(String[] args){
+	LList l = new LList();
+	System.out.println(l);
+	l.add("zero");
+	l.add("O");
+	System.out.println(l);
+	l.add("2");
+	l.add("3");
+	System.out.println(l.size());
+	System.out.println(l.get(1));
+	l.set(1, "yi");
+	System.out.println(l);
+    }
+    
+}
+

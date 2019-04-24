@@ -1,0 +1,47 @@
+Qian Zhou
+APCS2 pd01
+HW09 -- Yaaasss Queens
+2018-02-26
+
+2x2
+not solvable, since one queen is enough to occupy all the room under its range
+
+3x3
+not solvable, since one queen takes up six squares under attack, leaving only two either in the same diagonal or same horizontal/vertical line, which only allows one more queen
+
+4x4
+possible, only one answer (ignoring rotations of board)
+each queen has two diagonals, and two straight lines under its attack. Each queen has only one placement to make them not take up the room needed for the fourth queen.
+Each queen need to provide that the next row and column has at least one free space not occupied by her state space or that of any before her. 
+Placing a queen in the middle depletes space quickly, so the queen must be on the sides.
+placing a queen in the corners depletes the space for the last queen.
+There is only one pattern of configuration of the queens avaiable.
+
+5x5
+two possible answers. 
+One is the addition of an additional queen to the corner the additional row and column makes in the solution to 4.
+The other is the same configuration of queens as in 4x4, but with the additional queen added to the middle.
+
+6x6
+one possible answer.
+parallel development from second to the corner in the same plane from two parallel corners, and goring in a horizontal horse fashion so that each queen fits in the horizontal hole created by the two from the other development while each development fill every vertical line as they develop
+
+7x7
+two possible answers
+one is the addition of the additional queen on the corner of the new board resulting from the addition of a new row and new column to the solution of 6x6
+the other is with one queen at the center, two queens each at one square off in the same plane of opposite corners, then the addition of two queens in horse-shaped movements from the center-queen, that is possible, and one last horse shaped positioning from these two queens to the last two queens
+
+
+8x8
+two possible answers
+X X O X X X X X         O X X X X X X X
+X X X X X X O X         X X X X X X O X
+X O X X X X X X         X X X X O X X X 
+X X X X X X X O    or   X X X X X X X O
+X X X X X O X X         X O X X X X X X 
+X X X O X X X X         X X X O X X X X 
+O X X X X X X X         X X X X X O X X 
+X X X X O X X X         X X O X X X X X 
+
+Other configurations leave the last piece hanging.
+

@@ -1,0 +1,14 @@
+Qian Zhou
+APCS2 pd01
+HW11 -- Get On The Bus
+2018-02-28
+1. Counter = 0
+2. Start from input square, mark it occupied by valuing it as counter, counter ++
+3. generate a list of all possible next-moves
+4. if list.length <1 && counter < 64
+    earase current square by setting value to 0
+    return false
+5. for each element in the list, 
+    return (start from 2 with current element as input square, counter as counter) 
+       
+        
